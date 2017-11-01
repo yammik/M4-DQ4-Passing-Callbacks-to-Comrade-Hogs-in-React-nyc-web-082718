@@ -79,7 +79,7 @@
 .exclamation {
   height: 120px;
   width: 60px;
-  animation: exclaim 1.5s cubic-bezier(.54,.54,.23,1) forwards;
+  animation: exclaim 2.5s cubic-bezier(.54,.54,.23,1) forwards;
 }
 
 audio {
@@ -88,17 +88,18 @@ audio {
 
 @keyframes exclaim {
   0% {transform: scale(0.2); opacity: 1; }
-  20% {transform: scale(1.8); opacity: 1; }
-  30% {transform: scale(1); opacity: 1; }
-  50% {transform: scale(1.2); opacity: 1; }
+  10% {transform: scale(1.8); opacity: 1; }
+  20% {transform: scale(1); opacity: 1; }
+  40% {transform: scale(1.2); opacity: 1; }
   100% {transform: scale(1); opacity: 0; }
 }
 
 @keyframes exclaim2 {
   0% {transform: scale(0.2); opacity: 1; }
   10% {transform: scale(1.8); opacity: 1; }
-  25% {transform: scale(1); opacity: 1; }
-  100% {transform: scale(1.2); opacity: 0; }
+  20% {transform: scale(1); opacity: 1; }
+  80% {transform: scale(1.2); opacity: 1; }
+  100% {transform: scale(1); opacity: 0; }
 }
 
 @keyframes redNeon {

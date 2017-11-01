@@ -1,15 +1,8 @@
 import React from "react"
 import Pig from "./Pig.js"
 import GalaxySNote7 from "./GalaxySNote7.js"
-import exclaim from '../assets/exclaim.mp3';
-
-
-const pigs = [
-  "Sobriety",
-  "Trouble",
-  "Cherub",
-  "MasterBlaster"
-]
+import exclaim from '../assets/exclaim.mp3'
+import hogs from '../data/hogs.js'
 
 export default class PigPen extends React.Component {
   constructor() {
@@ -18,22 +11,23 @@ export default class PigPen extends React.Component {
       environment: "docile"
     }
     this.audio = new Audio(exclaim);
+  }
 
+  relax = () => {
+    const resetState = {environment: "docile"}
+    this.setState(resetState)
   }
 
   alterEnvironment = (vibe) => {
-    const newState = {environment: vibe}
     if (vibe === "inhospitable")
       this.audio.play()
+    const newState = {environment: vibe}
     this.setState(newState)
-    setTimeout(() => {
-      const resetState = {environment: "docile"}
-      this.setState(resetState)
-    }, 2000)
+    setTimeout(this.relax, 2000)
   }
 
   generateSheeple = () => {
-    return pigs.map((name, idx) => (
+    return hogs.map((name, idx) => (
       <Pig key={idx} id={name} name={name} environment={this.state.environment} />
     ))
   }
