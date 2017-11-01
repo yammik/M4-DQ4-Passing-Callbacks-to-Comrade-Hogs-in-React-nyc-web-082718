@@ -1,0 +1,113 @@
+// PIG
+
+import React from "react"
+import exclamation from "../assets/exclamation.png"
+
+export default class Pig extends React.Component {
+
+
+  exclaim = () => (<img className="exclamation" src={exclamation} alt="" />)
+
+  render() {
+    return(
+      <div id={this.props.name} className="sheeple">
+        {(this.props.environment === "inhospitable") ? this.exclaim() : null}
+      </div>
+    )atom
+  }
+}
+
+
+// GALAXY
+
+import React from "react"
+import wreee from '../assets/wreee.mp3';
+import exclaimShort from '../assets/exclaim-short.m4a';
+import exclamation from "../assets/exclamation.png"
+
+
+export default class GalaxySNote7 extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      panicked: (this.props.environment === "inhospitable"),
+    }
+    this.squeelAudio = new Audio(wreee);
+    this.exclaimAudio = new Audio(exclaimShort);
+    this.exclaimAudio.addEventListener("ended", () => {
+      this.props.alterEnvironment("inhospitable")
+    }, false)
+  }
+
+  relax = () => {
+    this.setState({panicked: false})
+  }
+
+  panic = () => {
+    if (this.state.panicked) return
+    this.setState({panicked: true})
+    setTimeout(this.relax, 3500)
+    this.exclaimAudio.play()
+    this.squeelAudio.play()
+  }
+
+  exclaim = () => (<img id="galaxy-exclamation" className="exclamation" src={exclamation} alt="" />)
+
+  render() {
+    return(
+      <div id="galaxy-s-note" onClick={this.panic}>
+        {(this.state.panicked) ? this.exclaim() : null}
+      </div>
+    )
+  }
+}
+
+
+// PIGPEN
+
+
+import React from "react"
+import Pig from "./Pig.js"
+import GalaxySNote7 from "./GalaxySNote7.js"
+import exclaim from '../assets/exclaim.mp3'
+import hogs from '../data/hogs.js'
+
+export default class PigPen extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      environment: "docile"
+    }
+    this.audio = new Audio(exclaim);
+  }
+
+  relax = () => {
+    const resetState = {environment: "docile"}
+    this.setState(resetState)
+  }
+
+  alterEnvironment = (vibe) => {
+    if (vibe === "inhospitable")
+      this.audio.play()
+    const newState = {environment: vibe}
+    this.setState(newState)
+    setTimeout(this.relax, 2000)
+  }
+
+  generateSheeple = () => {
+    return hogs.map((name, idx) => (
+      <Pig key={idx} id={name} name={name} environment={this.state.environment} />
+    ))
+  }
+
+  render() {
+    const sheeple = this.generateSheeple()
+    return(
+      <div id="pig-pen">
+        {sheeple}
+        <GalaxySNote7 environment={this.state.environment} alterEnvironment={this.alterEnvironment} />
+      </div>
+    )
+  }
+}
