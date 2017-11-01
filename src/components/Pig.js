@@ -10,7 +10,7 @@ export default class GalaxySNote7 extends React.Component {
   render() {
     return(
       <div id={this.props.name} className="sheeple">
-        {(this.props.environment === "inhospitable") ? this.panic() : null}
+        {/* trigger the sheeple! */}
       </div>
     )
   }
