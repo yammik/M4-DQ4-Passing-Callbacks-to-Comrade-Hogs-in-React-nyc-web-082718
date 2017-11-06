@@ -1,6 +1,6 @@
 # Danger Will Hoginson, Danger!
 
-### Oh no! Schmuziges hog GalaxySNote7 is at it again!
+### Oh no! Schmutziges hog GalaxySNote7 is at it again!
 
 No longer content grounding plains and delaying flights, this greased up hog is now stirring up trouble in the pig pen!
 
