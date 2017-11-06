@@ -17,16 +17,25 @@ export default class PigPen extends React.Component {
     this.state = {
       environment: "docile"
     }
-    this.audio = new Audio(exclaim);
+    this.audio = new Audio(exclaim)
+  }
+
+  relax = () => {
+    const newState = {environment: 'docile'}
+    this.setState(newState)
   }
 
   alterEnvironment = (vibe) => {
-    // can we use this? where/how?
+    if (vibe === "inhospitable")
+      this.audio.play()
+    const newState = {environment: vibe}
+    this.setState(newState)
+    setTimeout(this.relax, 2000)
   }
 
   generateSheeple = () => {
     return pigs.map((name, idx) => (
-      <Pig key={idx} id={name} name={name} {/* any other props? */}/>
+      <Pig key={idx} id={name} name={name} environment={this.state.environment} />
     ))
   }
 
@@ -35,7 +44,7 @@ export default class PigPen extends React.Component {
     return(
       <div id="pig-pen">
         {sheeple}
-        <GalaxySNote7 environment={this.state.environment} {/* anything else? */}/>
+        <GalaxySNote7 environment={this.state.environment} alterEnvironment={this.alterEnvironment} />
       </div>
     )
   }
