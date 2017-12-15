@@ -11,6 +11,6 @@ export default class Pig extends React.Component {
       <div id={this.props.name} className="sheeple">
         {(this.props.environment === "inhospitable") ? this.exclaim() : null}
       </div>
-    )atom
+    )
   }
 }
