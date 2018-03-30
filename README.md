@@ -9,6 +9,7 @@ We know he is a filthy fellow, but which one? Rumor has it he was hanging out wi
 Find GalaxySNote7 and help him alert his fellow hogs when someone touches his snout.
 
 ### Deliverables:
+<<<<<<< HEAD
 - On click, GalaxySNote7 should trigger a change in state for the pig pen's environment.
 - Galaxy and his hog cadre should react to this change in their environment and use the ```exclaim``` method to render their warnings.
 - After at least two seconds, things in the pig pen should cool off, and the environment should return to normal.
@@ -16,3 +17,13 @@ Find GalaxySNote7 and help him alert his fellow hogs when someone touches his sn
 - Think about what components own what information.
 - Adhere to React patterns --> information propagates up and down the component tree, but not sideways
 - Once GalaxySNote7 is successfully instigating panick when he is tickled, incorporate the sounds where you see fit!
+=======
+- See the sample video stored in ./public for an idea on how to get started
+- On click, GalaxySNote7 should trigger a change in state for the pig pen's environment
+- Galaxy and his hog cadre should react to this change in their environment and use the `exclaim` method to render their warnings
+- Think about what components should own what information
+- Adhere to React patterns --> information propagates up and down the component tree, but not sideways
+- Understanding this, draw out the component tree with your group. A component tree should show the components and the data (props!) that are communicated between them
+- After at least two seconds, things in the pig pen should cool off, and the environment should return to normal (this means we should be able to click on GalaxySNote7 again, instigating the same chain of events all over again AFTER he has cooled his jets)
+- Once GalaxySNote7 is successfully instigating panic when he is tickled, incorporate the sounds where you see fit!
+>>>>>>> wip-rr-overhaul-solution

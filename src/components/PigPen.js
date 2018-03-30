@@ -10,12 +10,12 @@ export default class PigPen extends React.Component {
     this.state = {
       environment: "docile"
     }
-    this.audio = new Audio(exclaim);
+    this.audio = new Audio(exclaim)
   }
 
   relax = () => {
-    const resetState = {environment: "docile"}
-    this.setState(resetState)
+    const newState = {environment: 'docile'}
+    this.setState(newState)
   }
 
   alterEnvironment = (vibe) => {
@@ -37,7 +37,7 @@ export default class PigPen extends React.Component {
     return(
       <div id="pig-pen">
         {sheeple}
-        <GalaxySNote7 environment={this.state.environment} alterEnvironment={this.alterEnvironment} />
+        <GalaxySNote7 environment={null} alterEnvironment={null} />
       </div>
     )
   }
