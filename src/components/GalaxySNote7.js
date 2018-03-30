@@ -9,24 +9,24 @@ export default class GalaxySNote7 extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      panicked: false,
+      panicked: (this.props.environment === "inhospitable"),
     }
 
     this.squeelAudio = new Audio(wreee);
-    this.exclaimAudio = new Audio(exclaim);
+    this.exclaimAudio = new Audio(exclaimShort);
     this.exclaimAudio.addEventListener("ended", () => {
-      this.throwAFit()
+      this.props.alterEnvironment("inhospitable")
     }, false)
   }
 
-  throwAFit = () => {
-  }
-
   relax = () => {
+    this.setState({panicked: false})
   }
 
-  exclaim = () => {
+  panic = () => {
     if (this.state.panicked) return
+    this.setState({panicked: true})
+    setTimeout(this.relax, 3500)
     this.exclaimAudio.play()
     this.squeelAudio.play()
   }
@@ -35,8 +35,8 @@ export default class GalaxySNote7 extends React.Component {
 
   render() {
     return(
-      <div id="galaxy-s-note" onClick={this.exclaim}>
-        {(this.state.panicked) ? this.panic() : null}
+      <div id="galaxy-s-note" onClick={this.panic}>
+        {(this.state.panicked) ? this.exclaim() : null}
       </div>
     )
   }
