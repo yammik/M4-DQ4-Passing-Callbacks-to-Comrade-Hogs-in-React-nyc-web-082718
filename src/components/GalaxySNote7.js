@@ -13,9 +13,9 @@ export default class GalaxySNote7 extends React.Component {
     }
 
     this.squeelAudio = new Audio(wreee);
-    this.exclaimAudio = new Audio(exclaim);
+    this.exclaimAudio = new Audio(exclaimShort);
     this.exclaimAudio.addEventListener("ended", () => {
-      this.throwAFit()
+      this.props.alterEnvironment("inhospitable")
     }, false)
   }
 
