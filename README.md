@@ -4,7 +4,7 @@
 
 ### Oh no! Schmutziges hog GalaxySNote7 is at it again!
 
-No longer content grounding plains and delaying flights, this greased up hog is now stirring up trouble in the pig pen!
+No longer content grounding planes and delaying flights, this greased up hog is now stirring up trouble in the pig pen!
 
 We know he is a filthy fellow, but which one? Rumor has it he was hanging out with Truffle Shuffle earlier, cramming his greedy little snout into the ground.
 
