@@ -11,6 +11,7 @@ We know he is a filthy fellow, but which one? Rumor has it he was hanging out wi
 Find GalaxySNote7 and help him alert his fellow hogs when someone touches his snout.
 
 ### Deliverables:
+
 - See the sample video stored in ./public for an idea on how to get started
 - On click, GalaxySNote7 should trigger a change in state for the pig pen's environment
 - Galaxy and his hog cadre should react to this change in their environment and use the `exclaim` method to render their warnings
