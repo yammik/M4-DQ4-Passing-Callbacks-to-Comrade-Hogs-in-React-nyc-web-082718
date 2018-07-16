@@ -23,10 +23,8 @@ export default class PigPen extends React.Component {
       this.audio.play()
     const newState = {environment: vibe}
     this.setState(newState)
-<<<<<<< HEAD
-=======
     setTimeout(this.relax, 2000)
->>>>>>> pushing up solution
+
   }
 
   generateSheeple = () => {
